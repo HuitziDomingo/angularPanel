@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit, inject } from '@angular/core';
+import { CommonModule } from '@angular/common'
+import { RouterOutlet } from '@angular/router'
+import { UsersService } from './services/users.service'
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,17 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'Angular17';
+export class AppComponent implements OnInit {
+
+  usersService = inject(UsersService)
+
+  constructor() { }
+
+  ngOnInit() {
+    this.usersService
+  }
+
+  
+
+
 }
