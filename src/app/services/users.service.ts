@@ -16,7 +16,7 @@ export class UsersService {
     // this.http.get('https://reqres.in/api/users').subscribe(res => console.log(res))
     let users = await fetch('https://reqres.in/api/users')
     let data = await users.json()
-    console.log(data)
+    // console.log(data.data)
   }
 
 
