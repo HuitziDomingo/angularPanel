@@ -27,13 +27,29 @@ export class AppComponent implements OnInit {
   }
 
 
-
   getPost() {
     this.petitionsHttpService.petitionHTTP().subscribe({
       next: (res) => {
-        console.log(res)
+        console.log(res.data)
       }
     })
+  }
+
+
+  createPost() {
+    let post = {
+      id: 1,
+      email: "user@example.com",
+      first_name: "huitzi",
+      last_name: "leon",
+      avatar: "https://imagen.jpg"
+    }
+
+    this.petitionsHttpService.createUsers(post).subscribe({
+      next: (res) => console.log(res),
+      error: (error) => console.log(error)
+    })
+
   }
 
 
