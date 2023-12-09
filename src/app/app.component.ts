@@ -1,39 +1,35 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { RouterOutlet } from '@angular/router'
-import { UsersService } from './services/users.service'
-import { PetitionsService } from './services/petitions.service'
 import { PetitionsHttpService } from './services/petitionsHttp.service'
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormControl } from '@angular/forms'
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, ReactiveFormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
 
-  usersService = inject(UsersService)
-  petitionsService = inject(PetitionsService)
   petitionsHttpService = inject(PetitionsHttpService)
-
-  constructor() { }
-
-  ngOnInit() {
-    // this.usersService
-    this.petitionsService
-    this.petitionsHttpService
-  }
+  form!: FormGroup
+  loading: boolean = false
+  videoName = new FormControl('')
+  video = new FormControl('')
 
 
-  getPost() {
-    this.petitionsHttpService.petitionHTTP().subscribe({
-      next: (res) => {
-        console.log(res.data)
-      }
+  constructor(
+    private readonly fb: FormBuilder
+  ) {
+    this.form = this.fb.group({
+      videoName: ['', Validators.required, Validators.minLength(100)],
+      video: ['', Validators.required],
     })
   }
+
+  ngOnInit() { }
 
 
   createPost() {
@@ -52,6 +48,10 @@ export class AppComponent implements OnInit {
 
   }
 
+
+  addVideo() {
+    console.log(this.video.value, this.videoName.value)
+  }
 
 
 }

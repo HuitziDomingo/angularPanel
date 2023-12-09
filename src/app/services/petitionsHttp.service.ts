@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { UsersResponse,User } from '../interfaces/users.interface'
+import { UsersResponse, User } from '../interfaces/users.interface'
 
 @Injectable({
   providedIn: 'root'
@@ -8,14 +8,9 @@ import { UsersResponse,User } from '../interfaces/users.interface'
 export class PetitionsHttpService {
 
   constructor(
-    private readonly http: HttpClient
+    private readonly http: HttpClient,
   ) {
-    // this.petitionHTTP()
-  }
-
-
-  petitionHTTP() {
-    return this.http.get<UsersResponse>('https://reqres.in/api/users')
+    
   }
 
 
