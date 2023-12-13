@@ -24,8 +24,13 @@ export class AppComponent implements OnInit {
     private readonly fb: FormBuilder
   ) {
     this.form = this.fb.group({
-      videoName: ['', Validators.required, Validators.minLength(100)],
-      video: ['', Validators.required],
+      videoName: ['', [
+        Validators.required,
+        Validators.maxLength(2)
+      ]],
+      video: ['', [Validators.required,
+      Validators.maxLength(2)
+      ]],
     })
   }
 
@@ -50,7 +55,7 @@ export class AppComponent implements OnInit {
 
 
   addVideo() {
-    console.log(this.video.value, this.videoName.value)
+    console.log(this.videoName.value, this.video.value)
   }
 
 
