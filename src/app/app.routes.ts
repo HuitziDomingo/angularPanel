@@ -8,32 +8,35 @@ export const routes: Routes = [
             {
                 path: 'change-detection',
                 title: 'Change detection',
-                loadComponent: () => import('./dashboard/pages/change-detection/change-detection.component'),  
+                loadComponent: () => import('./dashboard/pages/change-detection/change-detection.component'),
             },
             {
                 path: 'control-flow',
                 title: 'Control Flow',
-                loadComponent: () => import('./dashboard/pages/control-flow/control-flow.component'),  
+                loadComponent: () => import('./dashboard/pages/control-flow/control-flow.component'),
             },
             {
                 path: 'defer-options',
                 title: 'Defer Options',
-                loadComponent: () => import('./dashboard/pages/defer-options/defer-options.component'),  
+                loadComponent: () => import('./dashboard/pages/defer-options/defer-options.component'),
             },
             {
                 path: 'defer-views',
                 title: 'Defer Views',
-                loadComponent: () => import('./dashboard/pages/defer-views/defer-views.component'),  
+                loadComponent: () => import('./dashboard/pages/defer-views/defer-views.component'),
             },
             {
-                path: 'user',
+                path: 'user/:id',
                 title: 'User',
-                loadComponent: () => import('./dashboard/pages/user/user.component'),  
+                loadComponent: () => import('./dashboard/pages/user/user.component'),
             },
             {
-                path: 'users',
-                title: 'Users',
-                loadComponent: () => import('./dashboard/pages/users/users.component'),  
+                path: 'user-list',
+                title: 'User List',
+                loadComponent: () => import('./dashboard/pages/users/users.component'),
+            },
+            {
+                path: '', redirectTo: 'control-flow',pathMatch: 'full'
             },
         ],
     },
