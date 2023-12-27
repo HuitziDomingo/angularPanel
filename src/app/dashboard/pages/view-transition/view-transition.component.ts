@@ -7,6 +7,6 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   templateUrl: './view-transition.component.html'
 })
-export class ViewTransitionComponent {
+export default class ViewTransitionComponent {
 
 }

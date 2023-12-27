@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-users',
+  selector: 'app-defer-options',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './users.component.html'
+  templateUrl: './defer-options.component.html'
 })
-export class UsersComponent {
+export default class DeferOptionsComponent {
 
 }

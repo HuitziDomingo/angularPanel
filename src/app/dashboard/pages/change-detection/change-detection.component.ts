@@ -5,8 +5,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-chanhe-detection',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './chanhe-detection.component.html',
-  styleUrl: './chanhe-detection.component.css'
+  templateUrl: './change-detection.component.html',
+  styleUrl: './change-detection.component.css'
 })
 export default class ChanheDetectionComponent {
 
