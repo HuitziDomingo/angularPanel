@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common'
 import { PetitionsHttpService } from '../services/petitionsHttp.service'
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormControl } from '@angular/forms'
 import { RouterModule } from '@angular/router'
+import { SidemenuComponent } from '../shared/sidemenu/sidemenu.component'
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule, SidemenuComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
