@@ -7,7 +7,7 @@ export const routes: Routes = [
         children: [
             {
                 path: 'change-detection',
-                title: 'Change detection',
+                title: 'Change Detection',
                 loadComponent: () => import('./dashboard/pages/change-detection/change-detection.component'),
             },
             {
